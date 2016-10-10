@@ -1,5 +1,5 @@
 FROM jetty:9.3-jre8
-MAINTAINER Raymond Kroon <raymond@k3n.nl>
+MAINTAINER PDOK
 
 #ADD geowebcache_context.xml /var/lib/jetty/webapps/geowebcache.xml
 

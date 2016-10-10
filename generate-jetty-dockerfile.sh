@@ -2,7 +2,7 @@
 
 cat <<EOF
 FROM jetty:$JETTY_VERSION
-MAINTAINER Raymond Kroon <raymond@k3n.nl>
+MAINTAINER PDOK
 
 #ADD geowebcache_context.xml /var/lib/jetty/webapps/geowebcache.xml
 
