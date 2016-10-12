@@ -2,8 +2,7 @@
 <!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_0.dtd">
 
 <Configure class="org.eclipse.jetty.webapp.WebAppContext">
-    <Set name="contextPath">/tiles</Set>
-    <Set name="war">/opt/geowebcache.war</Set>
+    <Set name="contextPath">/geowebcache</Set>
+    <Set name="resourceBase">/opt/geowebcache</Set>
     <Set name="extractWAR">true</Set>
-    <Set name="tempDirectory">/tmp</Set>
 </Configure>
