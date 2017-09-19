@@ -23,11 +23,20 @@ The cache is configured at ```/cache```  and _geowebcache.xml_ should be in ```/
 
 ### Tomcat
 Native JAI on tomcat does work. It might be faster, it might be not.
-```docker run -d --volumes-from=gwc-data -v $(pwd)/config:/config --name=gwc pdok/geowebcache:1.8.3-tomcat-8.5-jre8```
+```
+docker run -d --volumes-from=gwc-data -v $(pwd)/config:/config --name=gwc pdok/geowebcache:1.8.3-tomcat-8.5-jre8
+```
+```
+docker run -d --volumes-from=gwc-data -v $(pwd)/config:/config --name=gwc mwengren/geowebcache:1.12-beta-tomcat-8.5-jre8
+```
 
 The cache is also configured at ```/cache```  and _geowebcache.xml_ should be in ```/config/``` 
 
 ### Build
 From top dir:
-```docker build --rm -t pdok/geowebcache:1.8.3-jetty-9.3-jre8 1.8.3-jetty-9.3-jre8```
-```docker build --rm -t pdok/geowebcache:1.8.3-tomcat-8.5-jre8 1.8.3-tomcat-8.5-jre8```
+```
+docker build --rm -t pdok/geowebcache:1.8.3-jetty-9.3-jre8 1.8.3-jetty-9.3-jre8
+```
+```
+docker build --rm -t pdok/geowebcache:1.8.3-tomcat-8.5-jre8 1.8.3-tomcat-8.5-jre8
+```
