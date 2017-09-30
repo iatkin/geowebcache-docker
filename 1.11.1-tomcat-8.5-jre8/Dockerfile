@@ -34,8 +34,8 @@ ADD geowebcache_context.xml /usr/local/tomcat/conf/Catalina/localhost/geowebcach
 RUN mkdir /config && chmod a+rw /config \
 && sed -i.bak "1,20 s/<constructor-arg ref=\"gwcDefaultStorageFinder\" \/>/<constructor-arg value=\"\/config\" \/>/g" /opt/geowebcache/WEB-INF/geowebcache-core-context.xml
 
-# fullWMS enable:  ############TODO Finish #############################
-#RUN sed '/<property name="fullWMS">/!b;n;c<string>changed_value</string>' /opt/geowebcache/WEB-INF/geowebcache-wmsservice-context.xml
+# fullWMS enable:
+RUN sed '/<property name="fullWMS">/!b;n;c\\t\t\t<value>TRUE</value>' /opt/geowebcache/WEB-INF/geowebcache-wmsservice-context.xml
 
 # SET CACHE_DIR
 RUN mkdir /cache && chmod a+rw /cache
@@ -50,4 +50,4 @@ ENV CATALINA_OPTS "-DGWC_SEED_RETRY_COUNT=5 -DGWC_SEED_RETRY_WAIT=10000 \
 
 # Modify geowebcache.xml for futher production tuning settings:
 #  NIO file locking
-#  geowebcache config location (how to?)
+#  this should be done in geowebcache.xml that is mounted to /config.
